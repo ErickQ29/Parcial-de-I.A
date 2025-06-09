@@ -14,7 +14,7 @@ dataset_path = "process_data_multi_snapshot_raw.csv"
 
 # Opción 2: Dataset en un enlace público (descomentar y reemplazar si aplica)
 # Si has subido tu dataset a GitHub, Google Drive, etc., obtén el enlace directo al archivo RAW.
-# dataset_url = "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/process_data_multi_snapshot_raw.csv"
+# dataset_url = "https://raw.githubusercontent.com/ErickQ29/Parcial-de-I.A/main/process_data_multi_snapshot_raw.csv"
 
 
 # --- Cargar el dataset ---
