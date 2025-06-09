@@ -54,13 +54,13 @@ El proyecto se compone de dos scripts principales:
 
 ---
 
-## 🖼️ Capturas de Ejemplo
+## 🖼️ Capturas de el trabajo
 
 ### 🔥 Mapa de Calor de Correlaciones
 
 > Visualización generada con `seaborn` a partir del CSV
 
-![Mapa de Calor de Correlaciones](images/heatmap_example.png)
+![Mapa de Calor de Correlaciones](Downloads/parcial practico/cap1)
 
 ---
 
