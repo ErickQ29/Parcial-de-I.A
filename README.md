@@ -68,31 +68,31 @@ El proyecto se compone de dos scripts principales:
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/cap1)
+![Salida de la terminal](images/cap1.jpg)
 
 ---
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/cap2)
+![Salida de la terminal](images/cap2.jpg)
 
 ---
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/cap3)
+![Salida de la terminal](images/cap3.jpg)
 
 ---
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/cap4)
+![Salida de la terminal](images/cap4.jpg)
 
 ---
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/grafica)
+![Salida de la terminal](images/grafica.jog)
 
 ---
 
