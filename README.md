@@ -56,8 +56,6 @@ El proyecto se compone de dos scripts principales:
 
 ---
 
-## 🖼️ Capturas de el trabajo
-
 ## 🖼️ Capturas de el trabajo dentro de la terminal de Blas para corroborar el poder bajar desde otros dispositivos el dataset
 
 
