@@ -26,7 +26,7 @@ Está diseñado como una herramienta educativa y de monitoreo inicial, con el po
 
 El proyecto se compone de dos scripts principales:
 
-### 📍 `process_data_collector.py`
+### 📍 `generacion.py`
 
 > 🔍 Recopila múltiples snapshots de los procesos activos.
 
@@ -44,7 +44,7 @@ El proyecto se compone de dos scripts principales:
 
 ---
 
-### 📍 `process_data_analyzer.py`
+### 📍 `analisis.py`
 
 > 📊 Carga y analiza el dataset generado.
 
