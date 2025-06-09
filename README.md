@@ -70,9 +70,14 @@ El proyecto se compone de dos scripts principales:
 
 ---
 
-## 🧪 Requisitos
+### 📟 Terminal Ejecutando el Análisis
 
-Asegúrate de tener **Python 3.x** instalado y luego ejecuta:
+![Salida de la terminal](images/terminal_output.png)
 
-```bash
-pip install psutil pandas matplotlib seaborn
+---
+
+### 📟 Terminal Ejecutando el Análisis
+
+![Salida de la terminal](images/terminal_output.png)
+
+---
