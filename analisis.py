@@ -5,35 +5,35 @@ import seaborn as sns
 import os
 
 # --- Configuración del acceso al dataset ---
-# Elige una de las siguientes opciones:
+# Ahora el script intentará cargar el dataset directamente desde la URL de GitHub.
+# Si el dataset está localmente, puedes descomentar la línea de dataset_path y comentar la de dataset_url.
 
-# Opción 1: Dataset local (recomendado para empezar)
+# Opción 1: Dataset local (comentado por defecto, puedes descomentarlo si lo necesitas)
 # Asegúrate de que 'process_data_multi_snapshot_raw.csv' esté en el mismo directorio que este script,
 # o especifica la ruta completa del archivo.
-dataset_path = "process_data_multi_snapshot_raw.csv"
+# dataset_path = "process_data_multi_snapshot_raw.csv"
 
-# Opción 2: Dataset en un enlace público (descomentar y reemplazar si aplica)
-# Si has subido tu dataset a GitHub, Google Drive, etc., obtén el enlace directo al archivo RAW.
-# dataset_url = "https://raw.githubusercontent.com/ErickQ29/Parcial-de-I.A/main/process_data_multi_snapshot_raw.csv"
+# Opción 2: Dataset en un enlace público (activo por defecto para este caso)
+# URL directa al archivo RAW en tu repositorio de GitHub.
+dataset_url = "https://raw.githubusercontent.com/ErickQ29/Parcial-de-I.A/main/process_data_multi_snapshot_raw.csv"
 
 
 # --- Cargar el dataset ---
 try:
-    # Intenta cargar desde la ruta local primero
-    if os.path.exists(dataset_path):
-        df = pd.read_csv(dataset_path)
-        print(f"Dataset cargado exitosamente desde: {os.path.abspath(dataset_path)}")
-    # Si no, intenta cargar desde una URL (si está definida y descomentada)
-    # elif 'dataset_url' in locals() and dataset_url:
-    #     df = pd.read_csv(dataset_url)
-    #     print(f"Dataset cargado exitosamente desde la URL: {dataset_url}")
-    else:
-        raise FileNotFoundError(f"El archivo '{dataset_path}' no se encontró localmente.")
+    # Intentar cargar desde la URL de GitHub
+    df = pd.read_csv(dataset_url)
+    print(f"Dataset cargado exitosamente desde la URL: {dataset_url}")
 
-except FileNotFoundError as e:
+    # Si quisieras tener una opción local de respaldo, podrías añadir algo como esto:
+    # elif os.path.exists(dataset_path):
+    #     df = pd.read_csv(dataset_path)
+    #     print(f"Dataset cargado exitosamente desde: {os.path.abspath(dataset_path)}")
+    # else:
+    #     raise FileNotFoundError(f"El archivo no se encontró en la URL ni localmente: {dataset_url}")
+
+except Exception as e: # Capturamos cualquier error durante la carga (FileNotFoundError, URL no válida, etc.)
     print(f"Error al cargar el dataset: {e}")
-    print("Asegúrate de que 'process_data_multi_snapshot_raw.csv' esté en el mismo directorio")
-    print("o que la 'dataset_url' esté correctamente configurada y accesible.")
+    print("Asegúrate de que la URL del dataset sea correcta y accesible.")
     exit() # Salir si el archivo no se puede cargar
 
 print("\n--- Vista previa del Dataset ---")
@@ -44,12 +44,13 @@ df.info()
 
 # --- Preprocesamiento: Asegurar que las columnas numéricas sean de tipo numérico ---
 # Define las columnas que deben ser numéricas para el análisis estadístico y de correlación.
-# Estas columnas incluyen las nuevas métricas añadidas en la recopilación de datos más profunda.
+# Estas columnas incluyen las métricas profundas añadidas en la recopilación de datos.
 numeric_cols = ['cpu_percent', 'memory_mb', 'num_threads',
                 'num_connections', 'num_open_files', 'io_read_bytes',
                 'io_write_bytes', 'memory_percent']
 
 # Filtrar solo las columnas que realmente existen en el DataFrame
+# CORRECCIÓN DE SINTAXIS: Se eliminó el 'col' duplicado aquí
 existing_numeric_cols = [col for col in numeric_cols if col in df.columns]
 
 # Convertir las columnas identificadas a tipo numérico.
@@ -106,9 +107,9 @@ except Exception as e:
     print(f"No se pudo generar el mapa de calor. Asegúrate de tener 'matplotlib' y 'seaborn' instalados.")
     print(f"Error detallado: {e}")
 
-# --- Conteo de Procesos Legítimos vs. Maliciosos ---
-# Esto solo tendrá sentido si has clasificado manualmente la columna 'is_malicious'
-# después de generar el CSV con el script de recopilación.
+# --- Conteo de Procesos Legítimos vs. Maliciosos (si la columna existe) ---
+# Si has clasificado manualmente el CSV y subido esa versión, esta sección será útil.
+# Si estás usando el archivo raw, esta columna tendrá solo 'unknown'.
 print("\n--- Conteo de Procesos por Clasificación ('is_malicious') ---")
 if 'is_malicious' in df.columns:
     print(df['is_malicious'].value_counts())
