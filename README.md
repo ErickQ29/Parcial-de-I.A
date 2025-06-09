@@ -2,7 +2,6 @@
 
 > Parcial práctico de **Erick Quiroz** y **Blas Batista**  
 > Universidad Tecnológica de Panamá 🇵🇦  
-> *(con posible aparición estelar de Gemini)*
 
 ---
 
@@ -142,4 +141,3 @@ Este análisis demuestra cómo, utilizando Python y sus librerías (`psutil`, `p
 Desarrollado por:  
 - **Erick Quiroz**  
 - **Blas Batista**  
-- *(posiblemente Gemini metió mano también 😅)*
