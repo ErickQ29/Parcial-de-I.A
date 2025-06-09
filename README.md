@@ -91,12 +91,6 @@ El proyecto se compone de dos scripts principales:
 
 ---
 
-### 📟 Terminal de Erick Ejecutando el Análisis
-
-![Salida de la terminal](images/grafica.jpg)
-
----
-
 
 
 # 📊 Interpretación del Análisis de Datos
