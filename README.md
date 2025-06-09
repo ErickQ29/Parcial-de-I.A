@@ -92,7 +92,7 @@ El proyecto se compone de dos scripts principales:
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/grafica.jog)
+![Salida de la terminal](images/grafica.jpg)
 
 ---
 
