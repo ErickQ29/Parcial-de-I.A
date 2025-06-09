@@ -58,43 +58,46 @@ El proyecto se compone de dos scripts principales:
 
 ## 🖼️ Capturas de el trabajo
 
-### 🔥 Mapa de Calor de Correlaciones
+## 🖼️ Capturas de el trabajo dentro de la terminal de Blas para corroborar el poder bajar desde otros dispositivos el dataset
 
-> Visualización generada con `seaborn` a partir del CSV
 
-![Mapa de Calor de Correlaciones](Downloads/parcial practico/cap1)
-
----
-
-### 📟 Terminal Ejecutando el Análisis
+### 📟 Terminal de Blas Ejecutando el Análisis
 
 ![Salida de la terminal](images/cap1.jpg)
 
 ---
 
-### 📟 Terminal Ejecutando el Análisis
+### 📟 Terminal de Blas Ejecutando el Análisis
 
 ![Salida de la terminal](images/cap2.jpg)
 
 ---
 
-### 📟 Terminal Ejecutando el Análisis
+### 📟 Terminal de Blas Ejecutando el Análisis
 
 ![Salida de la terminal](images/cap3.jpg)
 
 ---
 
-### 📟 Terminal Ejecutando el Análisis
+### 📟 Terminal de Blas Ejecutando el Análisis
 
 ![Salida de la terminal](images/cap4.jpg)
 
 ---
 
-### 📟 Terminal Ejecutando el Análisis
+### 📟 Grafica de el Análisis
 
 ![Salida de la terminal](images/grafica.jpg)
 
 ---
+
+### 📟 Terminal de Erick Ejecutando el Análisis
+
+![Salida de la terminal](images/grafica.jpg)
+
+---
+
+
 
 # 📊 Interpretación del Análisis de Datos
 
