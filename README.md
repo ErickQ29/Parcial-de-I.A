@@ -1,6 +1,8 @@
 # 🧠 Análisis de Procesos Activos del Sistema
 
-> Proyecto desarrollado por **Erick Quiroz**, **Blas Batista** y... posiblemente **Gemini** 👀
+> Parcial práctico de **Erick Quiroz** y **Blas Batista**  
+> Universidad Tecnológica de Panamá 🇵🇦  
+> *(con posible aparición estelar de Gemini)*
 
 ---
 
@@ -66,18 +68,83 @@ El proyecto se compone de dos scripts principales:
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/terminal_output.png)
+![Salida de la terminal](images/cap1)
 
 ---
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/terminal_output.png)
+![Salida de la terminal](images/cap2)
 
 ---
 
 ### 📟 Terminal Ejecutando el Análisis
 
-![Salida de la terminal](images/terminal_output.png)
+![Salida de la terminal](images/cap3)
 
 ---
+
+### 📟 Terminal Ejecutando el Análisis
+
+![Salida de la terminal](images/cap4)
+
+---
+
+### 📟 Terminal Ejecutando el Análisis
+
+![Salida de la terminal](images/grafica)
+
+---
+
+# 📊 Interpretación del Análisis de Datos
+
+El análisis estadístico y la matriz de correlación generados con Python permiten extraer las siguientes observaciones clave del dataset de procesos del sistema:
+
+## 📈 Estadísticas básicas
+
+### Promedios:
+- **cpu_percent:** 0.97 → la mayoría de los procesos usan poca CPU.  
+- **memory_mb:** 32 MB en promedio → bajo uso de memoria individual.  
+- **num_threads:** 10.6 → procesos multihilo activos.  
+- **num_connections:** 6.56 conexiones por proceso → posible actividad de red frecuente.
+
+### Moda y mediana:
+- Valores más frecuentes en `cpu_percent`, `io_write_bytes`, `num_connections` son 0 → muchos procesos están inactivos o sin actividad I/O significativa.
+
+### Desviación estándar:
+- Alta dispersión en `memory_mb` e `io_write_bytes` → hay procesos mucho más intensivos que otros (como navegadores, servicios de actualización o posibles amenazas).
+
+---
+
+## 🔍 Matriz de correlación: relaciones destacadas
+
+- `memory_mb` y `memory_percent`: correlación ≈ 1.0 → expresan la misma métrica en diferentes unidades.  
+- `memory_mb` con `io_read_bytes` y `io_write_bytes`: correlación moderada (~0.50) → procesos con más RAM también hacen más I/O.  
+- `cpu_percent` con `num_connections`: correlación positiva (~0.30) → podría ayudar a detectar procesos que se comunican frecuentemente.  
+- `num_threads` con `io_write_bytes`: correlación relevante → procesos paralelos que escriben mucho (como logs o cifrado en malware).
+
+---
+
+## 🛡 Observación sobre `is_malicious`
+
+Todos los procesos están marcados como `"unknown"` actualmente.  
+Esto no afecta el análisis estadístico, pero si se desea implementar modelos de clasificación o detección de amenazas, se recomienda etiquetar manualmente algunos procesos como `"legitimate"` o `"malicious"`.
+
+---
+
+## ✅ Conclusión
+
+Este análisis demuestra cómo, utilizando Python y sus librerías (`psutil`, `pandas`, `seaborn`), es posible:
+
+- Obtener métricas detalladas de uso del sistema.  
+- Detectar patrones clave y relaciones útiles.  
+- Sentar la base para futuras aplicaciones de detección de anomalías o análisis de malware.
+
+---
+
+## 🤝 Autores
+
+Desarrollado por:  
+- **Erick Quiroz**  
+- **Blas Batista**  
+- *(posiblemente Gemini metió mano también 😅)*
