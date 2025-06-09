@@ -1,83 +1,78 @@
-🧠 Análisis de Procesos Activos del Sistema
-Proyecto desarrollado por Erick Quiroz y Blas Batista
+# 🧠 Análisis de Procesos Activos del Sistema
 
-📌 Descripción
-Este proyecto en Python tiene como objetivo principal la recopilación y análisis de procesos activos del sistema operativo (compatible con Windows, Linux y macOS). Está diseñado con fines de monitoreo del sistema y como primer paso hacia la clasificación de procesos legítimos y potencialmente maliciosos.
+> Proyecto desarrollado por **Erick Quiroz**, **Blas Batista** y... posiblemente **Gemini** 👀
 
-Utilizando las bibliotecas de Python, se genera un dataset detallado con múltiples métricas de procesos, que luego es analizado estadísticamente para identificar patrones de comportamiento.
+---
 
-🎯 Objetivo
-Aplicar conocimientos prácticos sobre:
+## 📘 Descripción
 
-La creación de datasets desde el sistema operativo.
+Este proyecto en Python permite la **recopilación y análisis estadístico de procesos activos** del sistema operativo (compatible con **Windows**, **Linux** y **macOS**). 
 
-El análisis estadístico de procesos activos.
+Está diseñado como una herramienta educativa y de monitoreo inicial, con el potencial de extenderse hacia la **detección de comportamiento anómalo o malicioso** mediante técnicas de Machine Learning.
 
-La visualización de correlaciones para identificar relaciones entre métricas clave.
+---
 
-⚙️ Cómo Funciona
+## 🎯 Objetivo
+
+- Construir un dataset de procesos del sistema operativo utilizando Python.
+- Analizar dicho dataset mediante estadísticas descriptivas y correlaciones.
+- Visualizar relaciones entre variables para detectar patrones de uso de recursos.
+
+---
+
+## 🧩 Estructura del Proyecto
+
 El proyecto se compone de dos scripts principales:
 
-process_data_collector.py
-📥 Función: Recopila información detallada sobre todos los procesos activos.
+### 📍 `process_data_collector.py`
 
-⏱ Monitoreo: Realiza 4 capturas (snapshots) de procesos, cada una separada por 15 segundos.
+> 🔍 Recopila múltiples snapshots de los procesos activos.
 
-📊 Datos Recopilados:
+- Captura datos cada 15 segundos, 4 veces (1 minuto total).
+- Guarda la información en `process_data_multi_snapshot_raw.csv`.
 
-PID, nombre del proceso, ruta del ejecutable
+#### ✅ Datos Recopilados:
 
-Usuario propietario, uso de CPU y RAM
+- PID, nombre, ruta del ejecutable
+- Usuario, CPU, RAM (MB), %RAM
+- Número de hilos, estado del proceso
+- Tiempo de inicio, argumentos de línea de comandos
+- Archivos abiertos, conexiones de red
+- Bytes leídos/escritos por E/S
 
-Número de hilos, estado, tiempo de creación
+---
 
-Argumentos de línea de comandos
+### 📍 `process_data_analyzer.py`
 
-Conexiones de red, archivos abiertos
+> 📊 Carga y analiza el dataset generado.
 
-Lectura/escritura de E/S, porcentaje de memoria utilizada
+#### Análisis Realizado:
 
-📄 Salida: Archivo CSV llamado process_data_multi_snapshot_raw.csv.
+- Estadísticas: media, mediana, moda, desviación estándar
+- Matriz de correlación entre métricas numéricas
+- Visualización: mapa de calor con `seaborn`
 
-process_data_analyzer.py
-📈 Función: Carga y analiza el dataset generado.
+---
 
-🔍 Análisis:
+## 🖼️ Capturas de Ejemplo
 
-Estadísticas básicas: media, mediana, moda, desviación estándar.
+### 🔥 Mapa de Calor de Correlaciones
 
-Matriz de correlación entre variables numéricas.
+> Visualización generada con `seaborn` a partir del CSV
 
-Visualización con mapa de calor (seaborn).
+![Mapa de Calor de Correlaciones](images/heatmap_example.png)
 
-📁 Entrada: process_data_multi_snapshot_raw.csv.
+---
 
-🧰 Requisitos
-Asegúrate de tener Python 3.x y las siguientes bibliotecas instaladas:
+### 📟 Terminal Ejecutando el Análisis
 
-bash
-Copy
-Edit
+![Salida de la terminal](images/terminal_output.png)
+
+---
+
+## 🧪 Requisitos
+
+Asegúrate de tener **Python 3.x** instalado y luego ejecuta:
+
+```bash
 pip install psutil pandas matplotlib seaborn
-▶️ Uso
-Clona este repositorio o descarga los archivos.
-
-Ejecuta el script de recopilación de procesos:
-
-bash
-Copy
-Edit
-python process_data_collector.py
-Esto generará el archivo process_data_multi_snapshot_raw.csv.
-
-Luego, ejecuta el script de análisis:
-
-bash
-Copy
-Edit
-python process_data_analyzer.py
-Verás en consola las estadísticas y un mapa de calor con la correlación entre métricas de procesos.
-
-🔐 Consideraciones de Privacidad
-El archivo CSV generado puede contener información sensible como nombres de usuario, rutas de programas y procesos en ejecución. Aunque no incluye credenciales ni datos directamente explotables, te recomendamos anonimizar o filtrar los datos si piensas compartirlos públicamente.
-
